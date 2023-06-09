@@ -1,0 +1,114 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg" style="background-image: url('{% static "css/images/b3.jpg" %}');">
+{%block content%}
+
+<!--
+
+<div class="btn-group">
+  <button class="btn btn-info btn-lg mt-5 ml-5" type="button">
+    Select language for translation
+  </button>
+  <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split mt-5 active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+     <a class="dropdown-item" >English</a>
+    <a class="dropdown-item" href="#">Marathi</a>
+    <a class="dropdown-item" href="#">Hindi</a>
+
+  </div>
+</div>
+--!>
+
+<form action='/text_text/' method='post'>
+    {% csrf_token %}
+
+<!--  select language for type -->
+
+
+
+
+ <!-- Converted select language -->
+
+  <!--<input type="submit" value="Select"> -->
+
+
+
+
+<!--
+
+<select type="select" class="mdb-select" id="lang">
+    <option value="0">marathi</option>
+    <option value="1">english</option>
+    <option value="2">hindi</option>
+</select>
+
+-->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card mt-5 ml-5"  style="width: 30rem; height: 25rem"> <!-- set margin using mt and ml--!>
+            <a href="#" class="btn btn-info btn-lg btn-block">Enter Text For Translate</a>
+                    <select name="languages1">
+                    <option selected="selected" disabled id="languages1">Select language for type :</option>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="german">German</option>
+                    </select>
+
+
+                <div class="card-body" type="text" name="name">
+                    <!--<input type="text" id="text" name="name" size="55"   /> #size of textbox(length) --!>
+                     <label for="exampleTextarea"></label>
+                    <textarea class="form-control mt-3" id="text" rows="4" name="name" type="text"></textarea>
+                </div>
+          </div>
+        </div>
+
+      <div class="col-sm-6">
+          <div class="card mt-5 " style="width: 30rem; height: 25rem">
+            <button type="submit"  class="btn btn-info btn-lg btn-block">Text To Text Translation</button>
+                <select name="languages">
+                    <option selected="selected" disabled id="languages">Select language for translate :</option>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="german">German</option>
+                </select>
+
+                    <div class="card-body">
+                        <label for="exampleTextarea"></label>
+
+                        <textarea class="form-control mt-3" type="text" id="text" rows="4" name="name1" >
+                             {{data1}}
+
+                        </textarea>
+
+
+
+                    </div>
+          </div>
+      </div>
+    </div>
+</form>
+<div class="mt-5 ml-5">
+<a href="/" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+</div>
+{% endblock %}
+</body>
+</html>

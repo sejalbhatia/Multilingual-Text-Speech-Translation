@@ -1,0 +1,92 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg" style="background-image: url('{% static "css/images/b3.jpg" %}');">
+{%block content%}
+<form action='/text_speech/' method='post'>
+    {% csrf_token %}
+    <div class="row">
+
+      <div class="col-sm-6">
+          <div class="card mt-5 ml-5" style="width: 30rem; height: 25rem">
+            <button type="submit"  class="btn btn-info btn-lg btn-block">Text to Speech translation</button>
+
+
+                    <div class="card-body">
+                             <select name="languages1">
+                    <option selected="selected" disabled id="languages1">Text language:</option>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="german">German</option>
+                    </select>
+
+
+
+                         <select name="languages">
+                        <option selected="selected" disabled id="languages">Speech language:</option>
+                        <option value="english">English</option>
+                        <option value="marathi">Marathi</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="german">German</option>
+                        </select>
+
+
+
+
+                        <label for="exampleTextarea"></label>
+
+                        <textarea class="form-control mt-3" type="text" id="text" rows="4" name="name1" >
+                             {{translation}}
+
+                        </textarea>
+
+
+
+                    </div>
+
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!--
+    <div>
+            <div>
+                <label for="text">Enter Text For Speech Translation</label>
+                <input type="text" id="text" name="name1"/>
+            </div>
+                <button type="submit">Text to Speech translation</button>
+                <h1>Our {{translation}}</h1>
+    </div>
+
+
+--!>
+
+</form>
+<div class="mt-5 ml-5">
+<a href="/" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+</div>
+{% endblock %}
+</body>
+</html>
+

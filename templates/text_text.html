@@ -1,0 +1,116 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg" style="background-image: url('{% static "css/images/b2.jpg" %}');">
+{%block content%}
+
+<form action='/text_text/' method='post'>
+    {% csrf_token %}
+    <div>
+        <div>
+                <label for="text">Your Text</label>
+                <input type="text" id="text" name="name1"/>
+            </div>
+        <button type="submit">translation</button>
+        <h1>Our {{data1}}</h1>
+    </div>
+</form>
+
+<a href="/home/" type="button">Back</a>
+<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+
+
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
+<!--
+
+
+
+<body id="bg" style="background-image: url('{% static "css/images/b3.jpg" %}');">
+{%block content%}
+<form action='/text_speech/' method='post'>
+    {% csrf_token %}
+    <div>
+        <div>
+                <label for="text">Your Text</label>
+                <input type="text" id="text" name="name1"/>
+            </div>
+        <button type="submit">translation</button>
+        <h1>Our {{data2}}</h1>
+    </div>
+</form>
+{% endblock %}
+
+
+</body>
+</html>
+
+--!>
+
+
+
+
+
+
+
+
+
+<!--
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg" style="background-image: url('{% static "css/images/b3.jpg" %}');">
+{%block content%}
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+        <div class="card-header">
+          Input:
+        </div>
+      <div class="card-body">
+          <form action="/text_text/" method="POST">
+            <div class="form-group">
+                 <button type="button" class="btn btn-primary">Enter text:</button>
+                <input type="text" class="form-control" id="trans" name="trans" aria-describedby="emailHelp" placeholder="Enter text">
+                <button type="submit"  class="btn btn-primary">Translation:</button>
+                <input type="text" class="form-control"placeholder="Translation"> our data{{data}}</input>
+
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
+
+--!>

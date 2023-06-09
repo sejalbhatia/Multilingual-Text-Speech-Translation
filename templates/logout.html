@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body id="bg" style="background-image: url('{% static "css/images/b3.jpg" %}');">
+<h1>Logout</h1>
+
+{% if user.is_authenticated%}
+<h1> Welcome {{user.username}}</h1>
+<input type="submit" value="logout">
+{% else %}
+<a href="{% url 'register'%}">Register</a>
+<a href="{% url 'login'%}">Login</a>
+
+{%endif%}
+
+
+</body>
+</html>
